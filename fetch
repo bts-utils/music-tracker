@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# curl version >= 7.21.2
+
+if [[ ! $1 ]]; then
+  echo "From 06-10-2014 to 04-12-2014."
+  echo "Please enter day, exp: 11-10-2014, 11 Oct 2014."
+  exit 0
+fi
+
+echo "Fetch $day data."
+day=$( echo "$1" | sed 's/-/%2F/g' )
+
+cd data
+curl -X POST 'https://blockchain.info/export-history' -H 'origin: https://blockchain.info' -H 'accept-encoding: gzip,deflate' -H 'accept-language: zh-CN,zh;q=0.8' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36' -H 'content-type: application/x-www-form-urlencoded' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'cache-control: max-age=0' -H 'referer: https://blockchain.info/export-history?active=37X8DHpfiimB7PU5y35rfBcg5Vxj2R6umL' --data "active=37X8DHpfiimB7PU5y35rfBcg5Vxj2R6umL&archived=&action=export&start=$day&end=$day&format=csv" --compressed -JOL

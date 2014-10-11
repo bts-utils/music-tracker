@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+data="data"
+
+[[ ! -d "$data" ]] && mkdir -p $data
+
+title="DATE,BTC,Notes/BTC"
+total=$title
+start="2014-10-06 00:00:01 +0000"
+end="2014-12-04 23:59:59 +0000"
+
+echo "  Bitshares Music Note pre-sale"
+echo "  20%, each day 5 million Notes"
+echo "  Start: $start"
+echo "  End  : $end"
+echo "  BTC Address: 37X8DHpfiimB7PU5y35rfBcg5Vxj2R6umL"
+echo
+echo "  History:"
+echo
+
+for file in `find $data/*.csv`; do
+  c=`cat $file | textql --header -sql "select date(date), sum(moneyIn), 5000000*1.0/sum(moneyIn) from tbl"`
+  total="$total\n$c"
+done
+
+n=0
+echo -e $total | while read line; do
+  a=(${line//,/ })
+  d=$n
+  notes="5000000"
+  if [[ $n -eq 0 ]]; then
+    d="DAY"
+    notes="Notes"
+    printf " %5s\t%10s\t%s\t%*s\t%*s\n" $d ${a[0]} $notes 20 ${a[1]} 25 ${a[2]}
+  else
+    printf " %5s\t%s\t%s\t%*s\t%*s\n" $d ${a[0]} $notes 20 ${a[1]} 25 ${a[2]}
+  fi
+  ((n+=1))
+done
+
+c=`echo -e $total | textql --header -sql "select date('2014-12-04 23:59:59'), sum(BTC) from tbl"`
+a=(${c//,/ })
+echo
+printf " %s\t%s\t%*s\n" "" "End" 20 "Total"
+printf " %s\t%s\t%*s\n" "" ${a[0]} 20 ${a[1]}
+echo
