@@ -4,13 +4,13 @@ import (
 	"github.com/codegangsta/cli"
 )
 
-var CmdShow = cli.Command{
-	Name:        "show",
+var CmdSummary = cli.Command{
+	Name:        "summary",
 	Usage:       "",
 	Description: ``,
-	Action:      runShow,
+	Action:      runSummary,
 	Flags:       []cli.Flag{},
 }
 
-func runShow(c *cli.Context) {
+func runSummary(c *cli.Context) {
 }

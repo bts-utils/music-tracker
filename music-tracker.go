@@ -22,6 +22,7 @@ func main() {
 		cmd.CmdFetch,
 		cmd.CmdShow,
 		cmd.CmdList,
+		cmd.CmdSummary,
 	}
 	app.Flags = append(app.Flags, []cli.Flag{}...)
 	app.Run(os.Args)

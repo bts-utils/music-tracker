@@ -2,10 +2,11 @@ package cmd
 
 import (
 	"fmt"
+	"net/url"
 
 	"github.com/codegangsta/cli"
 
-	"github.com/bts-utils/music-tracker/modules/fetch"
+	"github.com/bts-utils/music-tracker/modules/httplib"
 )
 
 var CmdFetch = cli.Command{
@@ -14,7 +15,7 @@ var CmdFetch = cli.Command{
 	Description: `Fetch or update each day data.
 `,
 	Action: runFetch,
-	Flags:  []cli.Flag{
+	Flags: []cli.Flag{
 		cli.BoolFlag{"all, a", "Fetch all days data", ""},
 	},
 }
@@ -26,5 +27,14 @@ func runFetch(c *cli.Context) {
 
 	if len(c.Args()) == 0 {
 		return
+	}
+
+	date := c.Args().First()
+	params := "active=37X8DHpfiimB7PU5y35rfBcg5Vxj2R6umL&archived=&action=export&format=csv&start=" + url.QueryEscape(date) + "&end=" + url.QueryEscape(date)
+
+	body, err := httplib.ResponseBytes("POST", "https://blockchain.info/export-history", params, nil)
+
+	if err != nil {
+		fmt.Println(err)
 	}
 }
