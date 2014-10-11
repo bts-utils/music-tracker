@@ -1,0 +1,5 @@
+.DS_Store
+*.exe
+*.exe~
+music-tracker
+.vendor/

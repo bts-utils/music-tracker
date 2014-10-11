@@ -1,0 +1,7 @@
+[deps]
+github.com/bts-utils/music-tracker = 
+github.com/codegangsta/cli = 
+
+[res]
+include = 
+
