@@ -1,6 +1,6 @@
 # music-tracker
 
-BitShares Music Note Pre-sale Tracker
+BitShares Music Note Pre-sale Tracker.    
 The data source via [agsexplorer][]
 
 
