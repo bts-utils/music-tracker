@@ -31,7 +31,7 @@ Fetch each day data
 
 ### Links
 
-* [readme_cn][中文帮助]
+* [readme_cn](中文帮助)
 
 ## Donate, :)
 

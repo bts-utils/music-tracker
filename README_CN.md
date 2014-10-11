@@ -30,7 +30,7 @@ Music 预售数据跟踪器
 
 ### Links
 
-* [readme][English README]
+* [readme](English README)
 
 
 ## Donate, :)
