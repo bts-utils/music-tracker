@@ -30,14 +30,14 @@ Music 预售数据跟踪器
 
 ### Links
 
-* [readme](English README)
+* [English README](readme)
 
 
 ## Donate, :)
 
-BTC: `1PouzPJj5t3kCf5j7eYu3GXSE1PWuPkHQJ`
-PTS: `PdNWuJJS2DV2fSzuSyuzAwsJhpu8srddGb`
-BTSX: `trytinysmart`
+BTC: `1PouzPJj5t3kCf5j7eYu3GXSE1PWuPkHQJ`    
+PTS: `PdNWuJJS2DV2fSzuSyuzAwsJhpu8srddGb`    
+BTSX: `trytinysmart`    
 
 
 [textql]: https://github.com/dinedal/textql

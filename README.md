@@ -31,13 +31,13 @@ Fetch each day data
 
 ### Links
 
-* [readme_cn](中文帮助)
+* [中文帮助](readme_cn)
 
 ## Donate, :)
 
-BTC: `1PouzPJj5t3kCf5j7eYu3GXSE1PWuPkHQJ`
-PTS: `PdNWuJJS2DV2fSzuSyuzAwsJhpu8srddGb`
-BTSX: `trytinysmart`
+BTC: `1PouzPJj5t3kCf5j7eYu3GXSE1PWuPkHQJ`    
+PTS: `PdNWuJJS2DV2fSzuSyuzAwsJhpu8srddGb`    
+BTSX: `trytinysmart`    
 
 [textql]: https://github.com/dinedal/textql
 [readme_cn]: ./README_CN.md
