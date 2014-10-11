@@ -6,7 +6,7 @@ import (
 
 var CmdSummary = cli.Command{
 	Name:        "summary",
-	Usage:       "",
+	Usage:       "show bitshares music pre-sale summary",
 	Description: ``,
 	Action:      runSummary,
 	Flags:       []cli.Flag{},

@@ -6,7 +6,7 @@ import (
 
 var CmdList = cli.Command{
 	Name:        "list",
-	Usage:       "",
+	Usage:       "list all days status ",
 	Description: ``,
 	Action:      runList,
 	Flags:       []cli.Flag{},

@@ -11,7 +11,7 @@ import (
 
 var CmdFetch = cli.Command{
 	Name:  "fetch",
-	Usage: "Fetch or update each day data",
+	Usage: "fetch or update each day data",
 	Description: `Fetch or update each day data.
 `,
 	Action: runFetch,
@@ -37,4 +37,6 @@ func runFetch(c *cli.Context) {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	fmt.Println(string(body))
 }

@@ -6,7 +6,7 @@ import (
 
 var CmdShow = cli.Command{
 	Name:        "show",
-	Usage:       "",
+	Usage:       "show one day status",
 	Description: ``,
 	Action:      runShow,
 	Flags:       []cli.Flag{},

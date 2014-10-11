@@ -9,19 +9,19 @@ BitShares Music Note Pre-sale Tracker
 $ ./music-tracker -h
 
 NAME:
-   Music Tracker - BitShares Music Note pre-sale tracker
+   music-tracker - BitShares Music Note pre-sale tracker
 
 USAGE:
-   Music Tracker [global options] command [command options] [arguments...]
+   music-tracker [global options] command [command options] [arguments...]
 
 VERSION:
    0.0.0.1011
 
 COMMANDS:
-   fetch  Fetch or update each day data
-   show
-   list
-   summary
+   fetch  fetch or update each day data
+   show   show one day status
+   list   list all days status
+   summary  show bitshares music pre-sale summary
    help, h  Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:

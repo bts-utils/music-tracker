@@ -15,7 +15,7 @@ func init() {
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "Music Tracker"
+	app.Name = "music-tracker"
 	app.Usage = "BitShares Music Note pre-sale tracker"
 	app.Version = APP_VER
 	app.Commands = []cli.Command{
