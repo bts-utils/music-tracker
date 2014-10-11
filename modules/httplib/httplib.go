@@ -2,6 +2,7 @@ package httplib
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -50,4 +51,13 @@ func ResponseBytes(method, url, params string, client *http.Client) ([]byte, err
 	}
 	defer rc.Close()
 	return ioutil.ReadAll(rc)
+}
+
+func ResponseJSON(method, url, params string, client *http.Client, v interface{}) error {
+	data, err := ResponseBytes(method, url, params, client)
+	if err != nil {
+		return err
+	}
+	err = json.Unmarshal(data, v)
+	return err
 }
