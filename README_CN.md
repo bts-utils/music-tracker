@@ -41,4 +41,4 @@ BTSX: `trytinysmart`
 
 
 [textql]: https://github.com/dinedal/textql
-[readme]: ./README.md
+[readme]: README.md

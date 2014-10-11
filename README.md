@@ -31,7 +31,7 @@ Fetch each day data
 
 ### Links
 
-* [中文帮助](readme_cn)
+* 
 
 ## Donate, :)
 
@@ -40,4 +40,4 @@ PTS: `PdNWuJJS2DV2fSzuSyuzAwsJhpu8srddGb`
 BTSX: `trytinysmart`    
 
 [textql]: https://github.com/dinedal/textql
-[readme_cn]: ./README_CN.md
+[readme_cn]: README_CN.md
