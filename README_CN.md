@@ -30,7 +30,7 @@ Music 预售数据跟踪器
 
 ### Links
 
-* [English README](readme)
+* [English README](README.md)
 
 
 ## Donate, :)
@@ -41,4 +41,3 @@ BTSX: `trytinysmart`
 
 
 [textql]: https://github.com/dinedal/textql
-[readme]: README.md
