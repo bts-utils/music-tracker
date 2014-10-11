@@ -1,6 +1,7 @@
 # music-tracker
 
 BitShares Music Note Pre-sale Tracker
+The data source via [agsexplorer][]
 
 
 ## Usage
@@ -46,3 +47,5 @@ Total   AVG
 Sparkline:
 ▇█▆▆▄▁
 ```
+
+[agsexplorer]: http://www1.agsexplorer.com/
