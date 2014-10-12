@@ -57,8 +57,8 @@ https://bintray.com/bts-utils/music-tracker/music-tracker/view/files
 
 ## 提示
 
-如果你在[Blockchain.info][]上查看最新状态，由于数据使用了[Blockchain.inof][]历史接口，
-这些数据上的时间使用的交易时间，而不是块产生时间，这些交易结束的时候，有可能会进入第二天的产生的块中，
+如果你在[Blockchain.info][]上查看最新状态，由于数据使用了[Blockchain.info][]历史接口，    
+这些数据上的时间使用的交易时间，而不是块产生时间，这些交易结束的时候，有可能会进入第二天的产生的块中，    
 所以在做统计、比例时可能跟官方有些出入。
 
 
