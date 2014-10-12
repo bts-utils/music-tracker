@@ -1,10 +1,9 @@
 # music-tracker
 
-BitShares Music Note Pre-sale Tracker.    
-The source data via [agsexplorer.com][].
+Music 预售数据跟踪器。    
+数据来源于 [agsexplorer.com][].
 
-
-## Usage
+## 使用
 
 ```sh
 $ ./music-tracker -h
@@ -28,6 +27,7 @@ GLOBAL OPTIONS:
    --version, -v  print the version
 ```
 
+
 ```
 $ ./music-tracker fetch
 
@@ -48,19 +48,19 @@ Sparkline:
 ```
 
 
-## Cross Platform
+## 支持多个平台, Linux， Mac OS X，Windows
 
-You can download multi platform binary if you need.
+你可以从下面地址下载需要的版本，记得校验。
 
 https://bintray.com/bts-utils/music-tracker/music-tracker/view/files
 
 
-### Links
+## 链接
 
-* [中文帮助](README_CN.md)
+* [English README](README.md)
 
 
-## Donates, :)
+## 赞助, :)
 
 * BTC: `1PouzPJj5t3kCf5j7eYu3GXSE1PWuPkHQJ`    
 * PTS: `PdNWuJJS2DV2fSzuSyuzAwsJhpu8srddGb`    
