@@ -1,7 +1,7 @@
 # music-tracker
 
 BitShares Music Note Pre-sale Tracker.    
-The data source via [agsexplorer][]
+The source data via [agsexplorer][].
 
 
 ## Usage

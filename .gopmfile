@@ -1,0 +1,10 @@
+[target]
+path = github.com/bts-utils/music-tracker
+
+[deps]
+github.com/codegangsta/cli = 
+github.com/joliv/spark = 
+
+[res]
+include = 
+

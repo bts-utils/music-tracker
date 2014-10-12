@@ -1,0 +1,7 @@
+filesets:
+    includes:
+      - LICENSE
+        - README.md
+        - README_ZH.md
+    excludes:
+        - \.git
