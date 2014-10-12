@@ -1,7 +1,7 @@
 # music-tracker
 
 BitShares Music Note Pre-sale Tracker.    
-The source data via [agsexplorer][].
+The source data via [agsexplorer.com][].
 
 
 ## Usage
@@ -47,4 +47,17 @@ Sparkline:
 ██▇▇▆▆▁
 ```
 
-[agsexplorer]: http://www1.agsexplorer.com/
+
+## Cross Platform
+
+You can download multi platform binary if you need.
+
+https://bintray.com/bts-utils/music-tracker/music-tracker/view/files
+
+
+## License
+
+MIT
+
+
+[agsexplorer.com]: http://www1.agsexplorer.com/
