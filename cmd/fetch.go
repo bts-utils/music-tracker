@@ -50,6 +50,7 @@ func runFetch(c *cli.Context) {
 	}
 
 	boring_data := []float64{}
+	fmt.Println("")
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
 	fmt.Fprintln(w, "Day\tDate\tBTC\tNotes/BTC\t")
