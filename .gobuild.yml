@@ -1,6 +1,6 @@
 filesets:
     includes:
-      - LICENSE
+        - LICENSE
         - README.md
         - README_ZH.md
     excludes:
