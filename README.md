@@ -55,6 +55,14 @@ You can download multi platform binary if you need.
 https://bintray.com/bts-utils/music-tracker/music-tracker/view/files
 
 
+## Notes
+
+If you checked the stauts on [Blockchain.info][], that the data source is from blockchain.info's history data API.    
+The timestamp it uses is the time transaction is made instead of the time the block is produced which includes the transactions.    
+For those transactions made close to the end of the day may be included in the block that is produced the next day.    
+Therefore the totals and the ratio could be slightly different from the official calculation.
+
+
 ### Links
 
 * [中文帮助](README_CN.md)
@@ -73,3 +81,4 @@ MIT
 
 
 [agsexplorer.com]: http://www1.agsexplorer.com/
+[Blockchain.info]: https://blockchain.info/address/37X8DHpfiimB7PU5y35rfBcg5Vxj2R6umL
