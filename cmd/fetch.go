@@ -53,15 +53,17 @@ func runFetch(c *cli.Context) {
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
 	fmt.Fprintln(w, "Day\tDate\tBTC\tNotes/BTC\t")
+	count := 0
 	for i, v := range ts.Txs {
 		y, m, d := time.Unix(int64(v[0]), 0).Date()
 		date := fmt.Sprintf("%d-%02d-%02d", y, m, d)
-		fmt.Fprintln(w, fmt.Sprintf("%d\t%s\t%f\t%f\t", i+1, date, v[1], NOTES / v[1]))
+		count = i + 1
+		fmt.Fprintln(w, fmt.Sprintf("%d\t%s\t%f\t%f\t", count, date, v[1], NOTES/v[1]))
 		boring_data = append(boring_data, v[1])
 	}
 	fmt.Fprintln(w)
-	fmt.Fprintln(w, "Total\tAVG\t")
-	fmt.Fprintln(w, fmt.Sprintf("%f\t%f\t", float64(ts.Total)/10e8, float64(ts.Avg)))
+	fmt.Fprintln(w, "Total BTC\tAVG BTC\tAVG Notes\t")
+	fmt.Fprintln(w, fmt.Sprintf("%f\t%f\t%f\t", float64(ts.Total)/1e8, float64(ts.Avg)/1e8, float64(5e6*count)/(float64(ts.Total)/1e8)))
 	fmt.Fprintln(w)
 	w.Flush()
 

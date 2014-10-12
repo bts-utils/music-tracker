@@ -8,7 +8,7 @@ import (
 	"github.com/bts-utils/music-tracker/cmd"
 )
 
-const APP_VER = "0.0.0.1011"
+const APP_VER = "0.0.1.1011 Beta"
 
 func init() {
 }
