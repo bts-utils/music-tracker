@@ -3,3 +3,5 @@
 *.exe~
 music-tracker
 .vendor/
+bin/
+pkg/
