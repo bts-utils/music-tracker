@@ -23,6 +23,7 @@ func main() {
 		cmd.CmdShow,
 		cmd.CmdList,
 		cmd.CmdSummary,
+		cmd.CmdCountdown,
 	}
 	app.Flags = append(app.Flags, []cli.Flag{}...)
 	app.Run(os.Args)
