@@ -20,8 +20,8 @@ func main() {
 	app.Version = APP_VER
 	app.Commands = []cli.Command{
 		cmd.CmdFetch,
-		cmd.CmdShow,
-		cmd.CmdList,
+		//cmd.CmdShow,
+		//cmd.CmdList,
 		cmd.CmdSummary,
 		cmd.CmdCountdown,
 	}
