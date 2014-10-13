@@ -19,8 +19,8 @@ func Request(method, url, params string, client *http.Client) (io.ReadCloser, er
 	req.Body = ioutil.NopCloser(bf)
 	req.ContentLength = int64(len(params))
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36")
-	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.Header.Set("Cache-Control", "max-age=0")
+	//req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	//req.Header.Set("Cache-Control", "max-age=0")
 
 	if client == nil {
 		client = &http.Client{}

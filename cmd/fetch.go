@@ -14,15 +14,16 @@ import (
 	"github.com/bts-utils/music-tracker/modules/httplib"
 )
 
-const NOTES = 5e6
+// Each day 500,000 Notes
+const DAY_NOTES = 5e6
+const RATIO = 1e8
 
 var CmdFetch = cli.Command{
-	Name:  "fetch",
-	Usage: "fetch or update each day data",
-	Description: `Fetch or update each day data.
-`,
-	Action: runFetch,
-	Flags:  []cli.Flag{
+	Name:        "fetch",
+	Usage:       "fetch or update the latest status",
+	Description: `Fetch or update the latest status.`,
+	Action:      runFetch,
+	Flags:       []cli.Flag{
 	//cli.BoolFlag{"all, a", "Fetch all days data", ""},
 	},
 }
@@ -32,14 +33,11 @@ func runFetch(c *cli.Context) {
 		if c.Bool("all") {
 			return
 		}
-
 		if len(c.Args()) == 0 {
 			return
 		}
-
 			date := c.Args().First()
 			params := "active=37X8DHpfiimB7PU5y35rfBcg5Vxj2R6umL&archived=&action=export&format=csv&start=" + url.QueryEscape(date) + "&end=" + url.QueryEscape(date)
-
 			body, err := httplib.ResponseBytes("POST", "https://blockchain.info/export-history", params, nil)
 	*/
 
@@ -49,27 +47,27 @@ func runFetch(c *cli.Context) {
 		fmt.Println(err)
 	}
 
-	boring_data := []float64{}
-	fmt.Println("")
+	var (
+		boring []float64
+		i      int
+		t      Tx
+	)
+
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
-	fmt.Fprintln(w, "Day\tDate\tBTC\tNotes/BTC\t")
-	count := 0
-	for i, v := range ts.Txs {
-		y, m, d := time.Unix(int64(v[0]), 0).Date()
+	fmt.Fprintln(w, "\nDay\tDate\tBTC\tNotes/BTC\t")
+	for i, t = range ts.Txs {
+		t0, t1 := int64(t[0]), t[1]
+		y, m, d := time.Unix(t0, 0).Date()
 		date := fmt.Sprintf("%d-%02d-%02d", y, m, d)
-		count = i + 1
-		fmt.Fprintln(w, fmt.Sprintf("%d\t%s\t%f\t%f\t", count, date, v[1], NOTES/v[1]))
-		boring_data = append(boring_data, v[1])
+		fmt.Fprintln(w, fmt.Sprintf("%d\t%s\t%f\t%f\t", i+1, date, t1, DAY_NOTES/t1))
+		boring = append(boring, t1)
 	}
-	fmt.Fprintln(w)
-	fmt.Fprintln(w, "Total BTC\tAVG BTC\tAVG Notes\t")
-	fmt.Fprintln(w, fmt.Sprintf("%f\t%f\t%f\t", float64(ts.Total)/1e8, float64(ts.Avg)/1e8, float64(5e6*count)/(float64(ts.Total)/1e8)))
-	fmt.Fprintln(w)
-	w.Flush()
+	fmt.Fprintln(w, "\nTotal BTC\tAVG BTC\tAVG Notes\t")
+	fmt.Fprintln(w, fmt.Sprintf("%f\t%f\t%f\t\n", ts.Total/RATIO, ts.Avg/RATIO, float64(DAY_NOTES*(i+1))/(ts.Total/RATIO)))
 
-	sparkline := spark.Line(boring_data)
-	fmt.Println("Sparkline:")
-	fmt.Println(sparkline)
-	fmt.Println("")
+	sparkline := spark.Line(boring)
+	fmt.Fprintln(w, "Sparkline:")
+	fmt.Fprintln(w, sparkline+"\n")
+	w.Flush()
 }
