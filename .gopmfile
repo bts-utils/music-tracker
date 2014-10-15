@@ -4,6 +4,7 @@ path = github.com/bts-utils/music-tracker
 [deps]
 github.com/codegangsta/cli = 
 github.com/joliv/spark = 
+github.com/go-libs/ansi = 
 
 [res]
 include = 
