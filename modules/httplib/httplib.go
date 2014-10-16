@@ -35,7 +35,7 @@ func Request(method, url, params string, client *http.Client) (io.ReadCloser, er
 		return resp.Body, nil
 	}
 
-	resp.Body.Close()
+	defer resp.Body.Close()
 	if resp.StatusCode == 404 { // 403 can be rate limit error.  || resp.StatusCode == 403 {
 		err = fmt.Errorf("resource not found: %s", url)
 	} else {
