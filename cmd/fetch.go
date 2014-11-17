@@ -60,23 +60,26 @@ func runFetch(c *cli.Context) {
 
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
-	fmt.Fprintln(w, "\nDay\tDate\tBTC\tNotes/BTC\t")
+	fmt.Fprintln(w)
+	fmt.Fprintln(w, "Day\tDate\tBTC\tNotes/BTC")
 	for i, t = range ts.Txs {
 		t0, t1 := int64(t[0]), t[1]
 		y, m, d := time.Unix(t0, 0).Date()
 		date := fmt.Sprintf("%d-%02d-%02d", y, m, d)
-		str := fmt.Sprintf("%d\t%s\t%f\t%f\t", i+1, date, t1, DAY_NOTES/t1)
+		str := fmt.Sprintf("%d\t%s\t%f\t%f", i+1, date, t1, DAY_NOTES/t1)
 		if ty == y && tm == m && td == d {
 			str = styles.Red.Print(str)
 		}
 		fmt.Fprintln(w, str)
 		boring = append(boring, t1)
 	}
-	fmt.Fprintln(w, "\nTotal BTC\tAVG BTC\tAVG Notes\t")
-	fmt.Fprintln(w, styles.Blue.Print(fmt.Sprintf("%f\t%f\t%f\t\n", ts.Total/RATIO, ts.Avg/RATIO, float64(DAY_NOTES*(i+1))/(ts.Total/RATIO))))
+	fmt.Fprintln(w)
+	fmt.Fprintln(w, "\tTotal BTC\tAVG BTC\tAVG Notes")
+	fmt.Fprintln(w, styles.Blue.Print(fmt.Sprintf("\t%f\t%f\t%f", ts.Total/RATIO, ts.Avg/RATIO, float64(DAY_NOTES*(i+1))/(ts.Total/RATIO))))
+	fmt.Fprintln(w)
 
 	sparkline := spark.Line(boring)
-	fmt.Fprintln(w, "Sparkline:")
-	fmt.Fprintln(w, styles.Green.Print(sparkline)+"\n")
+	fmt.Fprintln(w, "\tSparkline:")
+	fmt.Fprintln(w, "\t"+styles.Green.Print(sparkline)+"\n")
 	w.Flush()
 }
